@@ -1,98 +1,70 @@
-var gulp = require("gulp"), // Gulp
-  sass = require("gulp-sass"), // SASS,
-  changed = require("gulp-changed"),
-  autoprefixer = require("gulp-autoprefixer"); // Add the desired vendor prefixes and remove unnecessary in SASS-files
+/* File: gulpfile.js */
 
-//
-// SASS
-//
+// grab our packages
+let gulp = require("gulp");
+let sass = require("gulp-sass");
+var elixir = require("laravel-elixir");
+elixir.config.sourcemaps = false;
+autoprefixer = require("gulp-autoprefixer");
+concat = require("gulp-concat");
 
-// Unify Main
 gulp.task("sass", function() {
   return gulp
-    .src("./html/assets/include/scss/**/*.scss")
-    .pipe(changed("./html/assets/css/"))
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(autoprefixer(["last 3 versions", "> 1%"], { cascade: true }))
-    .pipe(gulp.dest("./html/assets/css/"));
+    .src("./resources/assets/include/**/*.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest("./public/css"));
 });
 
-// E-commerce
-gulp.task("sass-shop", function() {
-  return gulp
-    .src("./html/e-commerce/assets/scss/**/*.scss")
-    .pipe(changed("./html/e-commerce/assets/css/"))
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(autoprefixer(["last 3 versions", "> 1%"], { cascade: true }))
-    .pipe(gulp.dest("./html/e-commerce/assets/css/"));
+// define the default task and add the watch task to it
+gulp.task("default", function() {
+  gulp.watch("./resources/assets/include/**/*.scss", ["sass"]);
 });
 
-// Blog & Magazine
-gulp.task("sass-blog", function() {
-  return gulp
-    .src("./html/multipage/blog-magazine/classic/assets/scss/**/*.scss")
-    .pipe(changed("./html/multipage/blog-magazine/classic/assets/css/"))
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(autoprefixer(["last 3 versions", "> 1%"], { cascade: true }))
-    .pipe(gulp.dest("./html/multipage/blog-magazine/classic/assets/css/"));
-});
+elixir(function(mix) {
+  // compile sass to css
+  //mix.sass(['resources/assets/include/scss/**/*.scss'], 'resources/assets/css');
+  //combine css files
+  mix.styles(
+    [
+      "vendor/bootstrap/bootstrap.min.css",
+      "vendor/bootstrap/offcanvas.css",
+      "vendor/dzsparallaxer/dzsparallaxer.css",
+      "vendor/dzsparallaxer/dzsscroller/scroller.css",
+      "vendor/dzsparallaxer/advancedscroller/plugin.css",
+      "vendor/animate.css",
+      "vendor/hamburgers/hamburgers.min.css",
+      "vendor/malihu-scrollbar/jquery.mCustomScrollbar.min.css",
+      "vendor/slick-carousel/slick/slick.css",
+      "vendor/fancybox/jquery.fancybox.css",
+      "vendor/icon-awesome/css/font-awesome.min.css",
+      "vendor/icon-line/css/simple-line-icons.css",
+      "vendor/icon-etlinefont/style.css",
+      "vendor/icon-line-pro/style.css",
+      "vendor/icon-hs/style.css",
+      "css/custom.css",
+      "css/app.css",
+      "css/unify-globals.css",
+      "css/unify-components.css",
+      "css/unify-core.css",
+      "css/unify.css",
+      "css/styles-multipage-marketing.css"
+    ],
+    "public/css/shell.css", // output file
+    "resources/assets"
+  );
 
-// Multi Page (Marketing Demo example, please change this path if you are using other demos)
-gulp.task("sass-mp-marketing", function() {
-  return gulp
-    .src("./html/multi-pages/marketing/assets/scss/**/*.scss")
-    .pipe(changed("./html/multi-pages/marketing/assets/css/"))
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(autoprefixer(["last 3 versions", "> 1%"], { cascade: true }))
-    .pipe(gulp.dest("./html/multi-pages/marketing/assets/css/"));
-});
+  //configure the jshint task
+  gulp.task("jshint", function() {
+    return gulp.src("source/javascript/**/*.js");
+    // .pipe(jshint())
+    // .pipe(jshint.reporter('jshint-stylish'));
+  });
 
-// One Page (Accounting Demo example, please change this path if you are using other demos)
-gulp.task("sass-op", function() {
-  return gulp
-    .src("./html/one-pages/accounting/assets/scss/**/*.scss")
-    .pipe(changed("./html/one-pages/accounting/assets/css/"))
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(autoprefixer(["last 3 versions", "> 1%"], { cascade: true }))
-    .pipe(gulp.dest("./html/one-pages/accounting/assets/css/"));
-});
-
-// Dark Theme
-gulp.task("sass-dt", function() {
-  return gulp
-    .src("./html/unify-main/misc/dark-theme/assets/scss/**/*.scss")
-    .pipe(changed("./html/unify-main/misc/dark-theme/assets/css/"))
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(autoprefixer(["last 3 versions", "> 1%"], { cascade: true }))
-    .pipe(gulp.dest("./html/unify-main/misc/dark-theme/assets/css/"));
-});
-
-// AdminTheme
-gulp.task("sass-admin", function() {
-  return gulp
-    .src("./html/admin-template/assets/include/scss/**/*.scss")
-    .pipe(changed("./html/admin-template/assets/css/"))
-    .pipe(sass({ outputStyle: "expanded" }))
-    .pipe(autoprefixer(["last 3 versions", "> 1%"], { cascade: true }))
-    .pipe(gulp.dest("./html/admin-template/assets/css/"));
-});
-
-//
-// Watch
-//
-
-gulp.task("watch", function() {
-  gulp.watch("./html/assets/include/scss/**/*.scss", ["sass"]);
-  gulp.watch("./html/admin-template/assets/include/scss/**/*.scss", [
-    "sass-admin"
-  ]);
-  gulp.watch("./html/multipage/blog-magazine/classic/assets/scss/**/*.scss", [
-    "sass-blog"
+  // configure which files to watch and what tasks to use on file changes
+  gulp.task("watch", function() {});
+  gulp.watch("./resources/assets/include/**/*.scss", [
+    "jshint",
+    "default",
+    "sass"
   ]);
 });
-
-//
-// Default
-//
-
-gulp.task("default", ["watch", "sass", "sass-blog", "sass-admin"]);

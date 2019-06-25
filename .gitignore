@@ -1,0 +1,10 @@
+.htaccess
+bootstrap/cache
+vendor
+shortcodes
+public/error_log
+composer.lock
+package-lock.json
+.editorconfig
+.idea/
+.env
