@@ -11,21 +11,24 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/img/acbvi/favicon.ico">
+    <link rel="shortcut icon" href="/img/ataz/favicon.ico">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
 
     <!-- CSS Unify -->
-    <link rel="stylesheet" href="/css/icon-awesome/css/font-awesome.min.css">
 
-    <!-- <link rel="stylesheet" href="/css/all.css">
-    <link rel="stylesheet" href="/css/shell.css"> -->
-    <link rel="stylesheet" href="/css/scss/custom.css">
+
     <link rel="stylesheet" href="/css/scss/unify-components.css">
     <link rel="stylesheet" href="/css/scss/unify.css">
     <link rel="stylesheet" href="/css/scss/unify-core.css">
     <link rel="stylesheet" href="/css/scss/unify-globals.css">
+    <link rel="stylesheet" href="/css/scss/custom.css">
     <link rel="stylesheet" href="/css/shell.css">
+    <link rel="stylesheet" href="/css/icon-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/icon-line-pro/style.css">
+
+
+
 
 
 </head>
@@ -65,12 +68,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item g-mx-20--lg">
-                                    <a href="wioa-locations" class="nav-link px-0">AZ WIOA Locations
+                                    <a href="/wioa-locations" class="nav-link px-0">AZ WIOA Locations
 
                                     </a>
                                 </li>
                                 <li class="nav-item g-mx-20--lg active">
-                                    <a href="hands-on-training" class="nav-link px-0">Events and Trainings
+                                    <a href="/hands-on-training" class="nav-link px-0">Events and Trainings
                                         <span class="sr-only">(current)</span>
                                     </a>
                                 </li>
@@ -83,18 +86,18 @@
                                 </li>
                                 <!-- End Logo -->
                                 <li class="nav-item g-mx-20--lg">
-                                    <a href="printable-resources" class="nav-link px-0">Resources
+                                    <a href="/printable-resources" class="nav-link px-0">Resources
 
                                     </a>
                                 </li>
                                 <li class="nav-item g-mx-20--lg">
-                                    <a href="#!" class="nav-link px-0">About Us
+                                    <a href="/about" class="nav-link px-0">About Us
 
                                     </a>
                                 </li>
 
                                 <li class="nav-item g-mx-20--lg">
-                                    <a href="login" class="nav-link px-0">Log In
+                                    <a href="/login" class="nav-link px-0">Log In
 
                                     </a>
                                 </li>
@@ -144,7 +147,7 @@
 
         <!-- Hero Info -->
         <section class="g-bg-cover g-bg-size-cover g-bg-black-opacity-0_8--after g-py-120 "
-            style="background-image: url(../../../html/assets/img/ataz/Casa_Grande_Florence_Blvd.jpg); ">
+            style="background-image: url(/img/ataz/Casa_Grande_Florence_Blvd.jpg); ">
             <div class="container text-center g-color-white g-pos-rel g-z-index-1 ">
                 <div class="row justify-content-center ">
                     <div class="col-md-8 ">
@@ -183,7 +186,7 @@
 
                         <article>
                             <h3 class="h6 g-mb-2 ">
-                                <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">A.T.AZ
+                                <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">A.T. AZ
                                     Trainings</a>
                             </h3>
                         </article>
@@ -321,29 +324,26 @@
                 <div class="row ">
                     <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md ">
                         <div class="d-lg-flex ">
-                            <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md ">2018 &copy; All
+                            <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md ">&copy;{{ date('Y') }} All
                                 Rights Reserved.</small>
                             <ul class="u-list-inline ">
-                                <li class="list-inline-item ">
-                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">Privacy
-                                        Policy</a>
+{{--                                <li class="list-inline-item ">--}}
+{{--                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">Privacy--}}
+{{--                                        Policy</a>--}}
                                 </li>
                                 <li class="list-inline-item ">
                                     <span>|</span>
                                 </li>
-                                <li class="list-inline-item ">
-                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">Terms of
-                                        Use</a>
-                                </li>
-                                <li class="list-inline-item ">
-                                    <span>|</span>
-                                </li>
-                                <li class="list-inline-item ">
-                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">License</a>
-                                </li>
-                                <li class="list-inline-item ">
-                                    <span>|</span>
-                                </li>
+{{--                                <li class="list-inline-item ">--}}
+{{--                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">Terms of--}}
+{{--                                        Use</a>--}}
+{{--                                </li>--}}
+{{--                                <li class="list-inline-item ">--}}
+{{--                                    <span>|</span>--}}
+{{--                                </li>--}}
+{{--                                <li class="list-inline-item ">--}}
+{{--                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">License</a>--}}
+{{--                                </li>--}}
                                 <li class="list-inline-item ">
                                     <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">Support</a>
                                 </li>
@@ -352,44 +352,44 @@
                     </div>
 
                     <div class="col-md-4 align-self-center ">
-                        <ul class="list-inline text-center text-md-right mb-0 ">
-                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "
-                                title="Facebook ">
-                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">
-                                    <i class="fa fa-facebook "></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "
-                                title="Skype ">
-                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">
-                                    <i class="fa fa-skype "></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "
-                                title="Linkedin ">
-                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">
-                                    <i class="fa fa-linkedin "></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "
-                                title="Pinterest ">
-                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">
-                                    <i class="fa fa-pinterest "></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "
-                                title="Twitter ">
-                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">
-                                    <i class="fa fa-twitter "></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "
-                                title="Dribbble ">
-                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">
-                                    <i class="fa fa-dribbble "></i>
-                                </a>
-                            </li>
-                        </ul>
+{{--                        <ul class="list-inline text-center text-md-right mb-0 ">--}}
+{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
+{{--                                title="Facebook ">--}}
+{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
+{{--                                    <i class="fa fa-facebook "></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
+{{--                                title="Skype ">--}}
+{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
+{{--                                    <i class="fa fa-skype "></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
+{{--                                title="Linkedin ">--}}
+{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
+{{--                                    <i class="fa fa-linkedin "></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
+{{--                                title="Pinterest ">--}}
+{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
+{{--                                    <i class="fa fa-pinterest "></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
+{{--                                title="Twitter ">--}}
+{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
+{{--                                    <i class="fa fa-twitter "></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
+{{--                                title="Dribbble ">--}}
+{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
+{{--                                    <i class="fa fa-dribbble "></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
                     </div>
                 </div>
             </div>
@@ -402,11 +402,11 @@
        "bottom": 15,
        "right": 15
      }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
-            <i class="hs-icon hs-icon-arrow-top"></i>
+            <i class="fa fa-chevron-up"></i>
         </a>
         <!-- End Go to Top -->
         <!-- JS Customization -->
-
+        <script src="/js/shell.js"></script>
         <!-- JS Plugins Init. -->
         <script>
         $(document).on('ready', function() {
@@ -440,7 +440,7 @@
         </script>
 
         <!-- JS -->
-        <script src="./js/all.js"></script>
+
 
 </body>
 
