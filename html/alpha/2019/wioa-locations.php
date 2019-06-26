@@ -15,8 +15,8 @@ $onestops = $onestop->fetch_all_city();
 <section class="dzsparallaxer auto-init height-is-based-on-content use-loading"
     data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
     <!-- Parallax Image -->
-    <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-black-gradient-opacity-v3--after"
-        style="height: 140%; background-image: url(../../assets/img/ataz/apache.jpg);"></div>
+    <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-pos-center g-bg-black-opacity-0_5--after"
+        style="height: 140%; background-image: url(../../../public/img/ataz/ability360.jpg);"></div>
     <!-- End Parallax Image -->
 
     <div class="container text-center g-py-100--md g-py-80">
