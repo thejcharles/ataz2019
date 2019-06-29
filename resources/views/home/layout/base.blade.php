@@ -304,7 +304,7 @@
                                         href="mailto:info@atarzona.com ">info@atarizona.com</a>
                                     <br>
                                     <a class="g-color-white-opacity-0_8 g-color-primary--hover "
-                                        href="#! ">www.atarizona.com</a>
+                                        href="#">{{getenv('APP_SITE_URL')}}</a>
                                 </p>
                             </div>
                             <!-- End Email and Website -->
