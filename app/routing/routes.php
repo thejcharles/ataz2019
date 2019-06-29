@@ -26,7 +26,9 @@ $router->map('GET', '/donate', 'App\Controllers\DonateController@show', 'donate'
 // services
 $router->map('GET', '/services', 'App\Controllers\ServicesController@show', 'services');
 //events
-$router->map('GET', '/events', 'App\Controllers\EventsController@show', 'events');
+
+//resources
+$router->map('GET', '/resources', 'App\Controllers\ResourcesController@show', 'resources');
 
 
 
