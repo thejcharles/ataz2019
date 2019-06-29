@@ -83,7 +83,7 @@ elixir(function(mix) {
 
   //configure the jshint task
   gulp.task("jshint", function() {
-    return gulp.src("source/javascript/**/*.js");
+    // return gulp.src("source/javascript/**/*.js");
     // .pipe(jshint())
     // .pipe(jshint.reporter('jshint-stylish'));
   });

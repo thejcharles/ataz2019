@@ -17,7 +17,6 @@
 
     <!-- CSS Unify -->
 
-
     <link rel="stylesheet" href="/css/scss/unify-components.css">
     <link rel="stylesheet" href="/css/scss/unify.css">
     <link rel="stylesheet" href="/css/scss/unify-core.css">
@@ -91,7 +90,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item g-mx-20--lg">
-                                    <a href="/about" class="nav-link px-0">About Us
+                                    <a href="/contact" class="nav-link px-0">Contact Us
 
                                     </a>
                                 </li>
@@ -266,7 +265,7 @@
                         </div>
 
                         <address class="g-bg-no-repeat g-font-size-12 mb-0 "
-                            style="background-image: url(../../assets/img/maps/map2.png); ">
+                            style="background-image: url(/img/maps/map2.png); ">
                             <!-- Location -->
                             <div class="d-flex g-mb-20 ">
                                 <div class="g-mr-10 ">
@@ -288,8 +287,7 @@
                                         <i class="fa fa-phone "></i>
                                     </span>
                                 </div>
-                                <p class="mb-0 ">(+602) 273 7411
-                                    <br> (+602) 273 7411</p>
+                                <p class="mb-0 ">(+602) 273 7411</p>
                             </div>
                             <!-- End Phone -->
 
@@ -316,6 +314,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <!-- End Footer -->
 
         <!-- Copyright Footer -->
@@ -345,51 +344,10 @@
 {{--                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">License</a>--}}
 {{--                                </li>--}}
                                 <li class="list-inline-item ">
-                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">Support</a>
+                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="/contact">Support</a>
                                 </li>
                             </ul>
                         </div>
-                    </div>
-
-                    <div class="col-md-4 align-self-center ">
-{{--                        <ul class="list-inline text-center text-md-right mb-0 ">--}}
-{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
-{{--                                title="Facebook ">--}}
-{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
-{{--                                    <i class="fa fa-facebook "></i>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
-{{--                                title="Skype ">--}}
-{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
-{{--                                    <i class="fa fa-skype "></i>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
-{{--                                title="Linkedin ">--}}
-{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
-{{--                                    <i class="fa fa-linkedin "></i>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
-{{--                                title="Pinterest ">--}}
-{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
-{{--                                    <i class="fa fa-pinterest "></i>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
-{{--                                title="Twitter ">--}}
-{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
-{{--                                    <i class="fa fa-twitter "></i>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                            <li class="list-inline-item g-mx-10 " data-toggle="tooltip " data-placement="top "--}}
-{{--                                title="Dribbble ">--}}
-{{--                                <a href="#! " class="g-color-white-opacity-0_5 g-color-primary--hover ">--}}
-{{--                                    <i class="fa fa-dribbble "></i>--}}
-{{--                                </a>--}}
-{{--                            </li>--}}
-{{--                        </ul>--}}
                     </div>
                 </div>
             </div>
@@ -406,42 +364,85 @@
         </a>
         <!-- End Go to Top -->
         <!-- JS Customization -->
-        <script src="/js/shell.js"></script>
+
         <!-- JS Plugins Init. -->
-        <script>
-        $(document).on('ready', function() {
-            // initialization of header
-            $.HSCore.components.HSHeader.init($('#js-header'));
-            $.HSCore.helpers.HSHamburgers.init('.hamburger');
 
-            // initialization of HSMegaMenu component
-            $('.js-mega-menu').HSMegaMenu({
-                event: 'hover',
-                pageContainer: $('.container'),
-                breakpoint: 991
-            });
-
-            // initialization of HSDropdown component
-            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-                afterOpen: function() {
-                    $(this).find('input[type="search"]').focus();
-                }
-            });
-
-            // initialization of popups
-            $.HSCore.components.HSPopup.init('.js-fancybox');
-
-            // initialization of carousel
-            $.HSCore.components.HSCarousel.init('.js-carousel');
-
-            // initialization of go to
-            $.HSCore.components.HSGoTo.init('.js-go-to');
-        });
-        </script>
 
         <!-- JS -->
 
 
 </body>
+{{--<script src="/js/shell.js"></script>--}}
+<!-- JS Global Compulsory -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="/vendor/popper.js/popper.min.js"></script>
+<script src="/vendor/bootstrap/bootstrap.min.js"></script>
+
+<!-- JS Implementing Plugins -->
+<script src="/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+<script src="/vendor/dzsparallaxer/dzsparallaxer.js"></script>
+<script src="/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
+<script src="/vendor/dzsparallaxer/advancedscroller/plugin.js"></script>
+<script src="/vendor/fancybox/jquery.fancybox.min.js"></script>
+<script src="/vendor/slick-carousel/slick/slick.js"></script>
+<!-- JS acbvi -->
+<script src="/js/hs.core.js"></script>
+<script src="/js/components/hs.header.js"></script>
+<script src="/js/helpers/hs.hamburgers.js"></script>
+<script src="/js/components/hs.dropdown.js"></script>
+<script src="/js/components/hs.popup.js"></script>
+<script src="/js/components/hs.carousel.js"></script>
+<script src="/js/components/hs.go-to.js"></script>
+
+<!-- JS Customization -->
+<script src="/js/custom.js"></script>
+
+<script  src="//maps.googleapis.com/maps/api/js?key={{getenv('GOOGLE_MAP_KEY')}}&amp;callback=initMap" async="" defer=""></script>
+<!-- JS Implementing Plugins -->
+<script  src="/vendor/gmaps/gmaps.min.js"></script>
+
+<!-- JS Unify -->
+<script  src="/js/components/gmap/hs.map.js"></script>
+
+<!-- JS Plugins Init. -->
+<script >
+  // initialization of google map
+  function initMap() {
+    $.HSCore.components.HSGMap.init('.js-g-map');
+  }
+</script>
+
+<script>
+  $(document).on('ready', function() {
+    // initialization of header
+    $.HSCore.components.HSHeader.init($('#js-header'));
+    $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+    // initialization of HSMegaMenu component
+    $('.js-mega-menu').HSMegaMenu({
+      event: 'hover',
+      pageContainer: $('.container'),
+      breakpoint: 991
+    });
+
+    // initialization of HSDropdown component
+    $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+      afterOpen: function() {
+        $(this).find('input[type="search"]').focus();
+      }
+    });
+
+    // initialization of popups
+    $.HSCore.components.HSPopup.init('.js-fancybox');
+
+    // initialization of carousel
+    $.HSCore.components.HSCarousel.init('.js-carousel');
+
+    // initialization of go to
+    $.HSCore.components.HSGoTo.init('.js-go-to');
+  });
+</script>
+
 
 </html>
