@@ -8,6 +8,7 @@ use App\Classes\Request;
 use App\Classes\Session;
 use App\Classes\ValidateRequest;
 use App\Models\User;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 
 class AuthController extends BaseController
@@ -50,18 +51,19 @@ class AuthController extends BaseController
                     return view('home/register', ['errors' => $errors]);
                 }
 
-                //insert into database
-                User::create([
-                    'username' => $request->username,
-                    'email' => $request->email,
-                    'password' => password_hash($request->password, PASSWORD_BCRYPT),
-                    'fullname' => $request->fullname,
-                    'address' => $request->address,
-                    'role' => 'user',
-                ]);
+              //insert into database
+              User::create([
+                'username' => $request->username,
+                'email' => $request->email,
+                'password' => password_hash($request->password, PASSWORD_BCRYPT),
+                'pass_validate' => 0,
+                'name' => $request->name,
+                //'photo' => $request->photo,
+                'role' => 'user',
+              ]);
 
                 Request::refresh();
-                return view('home/register', ['success' => 'Account created, please login']);
+                return view('home/register', ['success' => 'Account created!']);
             }
             throw new \Exception('Token Mismatch');
         }
@@ -83,19 +85,20 @@ class AuthController extends BaseController
 
                 if($validate->hasError()){
                     $errors = $validate->getErrorMessages();
-                    return view('login', ['errors' => $errors]);
+                    return view('home/login', ['errors' => $errors]);
                 }
 
                 /**
                  * Check if user exist in db
                  */
-                $user = User::where('username', $request->username)
-                    ->orWhere('email', $request->username)->first();
+//                $user = User::where('username', $request->username)
+//                    ->orWhere('email', $request->username)->first();
+              $user = Capsule::table('users')->where('username', $request->username)->first();
 
                 if($user){
                     if(!password_verify($request->password, $user->password)){
                         Session::add('error', 'Incorrect password');
-                        return view('login');
+                        return view('home/login');
                     }else{
                         Session::add('SESSION_USER_ID', $user->id);
                         Session::add('SESSION_USER_NAME', $user->username);
@@ -103,7 +106,7 @@ class AuthController extends BaseController
                     }
                 }else{
                     Session::add('error', 'User not found, please try again');
-                    return view('login');
+                    return view('home/login');
                 }
             }
             throw new \Exception('Token Mismatch');

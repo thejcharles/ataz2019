@@ -11,7 +11,7 @@ require_once __DIR__ . '/../app/config/_env.php';
 
 // set custom error handler
 new App\classes\Database();
-//set_error_handler([new App\classes\ErrorHandler(), 'handleErrors']);
+set_error_handler([new App\classes\ErrorHandler(), 'handleErrors']);
 
 require_once __DIR__ . '/../app/routing/routes.php';
 

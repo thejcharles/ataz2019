@@ -3,7 +3,13 @@
 
 @section('content')
 
+<div id="app-2">
+  @{{message }}
+</div>
 
+<?php $stuff = array('people', 'jason', 'stuff','this stuff'); ?>
+
+<?php echo $stuff[0];?>
 <!-- Promo Block -->
 <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall"
     data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
@@ -487,5 +493,13 @@
         </div>
     </div>
 </section>
+<script>
+  var app2 = new Vue({
+    el: '#app-2',
+    data: {
+      message: 'You loaded this page on ' + new Date().toLocaleString() + '{{$stuff[0]}}'
+    }
+  })
+</script>
 <!-- End Team Blocks -->
 @endsection

@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Classes\Mail;
 use App\Classes\Request;
 use App\Classes\Session;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 class IndexController extends BaseController
 
@@ -19,7 +20,9 @@ class IndexController extends BaseController
         }else{
             $msg = 'Not defined';
         }
-        return view('home/home', ['admin' => $msg]);
+      $event = Capsule::table('trainings')->get();
+      $events = json_encode(['events' =>$event]);
+        return view('home/home', ['admin' => $msg, 'events'=> $events]);
     }
 
     public function get()

@@ -27,8 +27,16 @@ $router->map('GET', '/donate', 'App\Controllers\DonateController@show', 'donate'
 $router->map('GET', '/services', 'App\Controllers\ServicesController@show', 'services');
 //events
 
-//resources
+// resources
 $router->map('GET', '/resources', 'App\Controllers\ResourcesController@show', 'resources');
+
+// resources
+$router->map('GET', '/events', 'App\Controllers\EventsController@show', 'events');
+
+// admin routes
+
+// admin home
+$router->map('GET', '/admin', 'App\Controllers\Admin\AdminController@show', 'admin-home');
 
 
 
