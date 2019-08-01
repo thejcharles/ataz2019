@@ -14,6 +14,9 @@
     <link rel="shortcut icon" href="/img/ataz/favicon.ico">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+  
+  <link  rel="stylesheet" href="/vendor/slick-carousel/slick/slick.css">
+  <link  rel="stylesheet" href="/vendor/jquery-ui/themes/base/jquery-ui.min.css">
 
     <!-- CSS Unify -->
 
@@ -25,11 +28,15 @@
     <link rel="stylesheet" href="/css/shell.css">
     <link rel="stylesheet" href="/css/icon-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="/css/icon-line-pro/style.css">
-
-
-
-
-
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  <!-- production version, optimized for size and speed -->
+{{--  <script src="https://cdn.jsdelivr.net/npm/vue"></script>--}}
 </head>
 
 <body>
@@ -94,14 +101,7 @@
 
                                     </a>
                                 </li>
-
-                                <li class="nav-item g-mx-20--lg">
-                                    <a href="/login" class="nav-link px-0">Log In
-
-                                    </a>
-                                </li>
-
-
+                              @if(isAuthenticated())
                                 <li class="nav-item dropdown g-mx-20--lg">
                                     <a href="#!" class="nav-link dropdown-toggle g-px-0" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">Settings </a>
@@ -116,16 +116,23 @@
                                                 style="color: rgb(33, 67, 89);">Administration</a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="#!" style="color: rgb(33, 67, 89);">Get
-                                                Support</a>
+                                            <a class="nav-link g-px-0" href="#!" style="color: rgb(33, 67, 89);">
+                                              Get Support</a>
                                         </li>
                                         <li class="dropdown-item">
-                                            <a class="nav-link g-px-0" href="logout" style="color: rgb(33, 67, 89);">Log
-                                                Out</a>
+                                            <a class="nav-link g-px-0" href="/logout" style="color: rgb(33, 67, 89);">
+                                              Log Out</a>
                                         </li>
                                     </ul>
                                     <!-- End Submenu (Bootstrap) -->
                                 </li>
+                                @else
+                                <li class="nav-item g-mx-20--lg">
+                                  <a href="/login" class="nav-link px-0">
+                                    Login
+                                  </a>
+                                </li>
+                                @endif
 
                             </ul>
                         </div>
@@ -136,6 +143,10 @@
         </header>
         <!-- End Header -->
         <!-- content-->
+      <div id="app">
+        @{{ message }}
+      </div>
+      
         @yield('content')
     </main>
 
@@ -303,8 +314,6 @@
                                     <a class="g-color-white-opacity-0_8 g-color-primary--hover "
                                         href="mailto:info@atarzona.com ">info@atarizona.com</a>
                                     <br>
-                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover "
-                                        href="#">{{getenv('APP_SITE_URL')}}</a>
                                 </p>
                             </div>
                             <!-- End Email and Website -->
@@ -326,23 +335,9 @@
                             <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md ">&copy;{{ date('Y') }} All
                                 Rights Reserved.</small>
                             <ul class="u-list-inline ">
-{{--                                <li class="list-inline-item ">--}}
-{{--                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">Privacy--}}
-{{--                                        Policy</a>--}}
-                                </li>
                                 <li class="list-inline-item ">
                                     <span>|</span>
                                 </li>
-{{--                                <li class="list-inline-item ">--}}
-{{--                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">Terms of--}}
-{{--                                        Use</a>--}}
-{{--                                </li>--}}
-{{--                                <li class="list-inline-item ">--}}
-{{--                                    <span>|</span>--}}
-{{--                                </li>--}}
-{{--                                <li class="list-inline-item ">--}}
-{{--                                    <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="#! ">License</a>--}}
-{{--                                </li>--}}
                                 <li class="list-inline-item ">
                                     <a class="g-color-white-opacity-0_8 g-color-primary--hover " href="/contact">Support</a>
                                 </li>
@@ -394,16 +389,25 @@
 <script src="/js/components/hs.popup.js"></script>
 <script src="/js/components/hs.carousel.js"></script>
 <script src="/js/components/hs.go-to.js"></script>
+<script src="/js/components/hs.tabs.js"></script>
 
 <!-- JS Customization -->
 <script src="/js/custom.js"></script>
 
-<script  src="//maps.googleapis.com/maps/api/js?key={{getenv('GOOGLE_MAP_KEY')}}&amp;callback=initMap" async="" defer=""></script>
+<script  src="//maps.googleapis.com/maps/api/js?key={{getenv('GOOGLE_MAP_KEY')}}&amp;" async="" defer=""></script>
 <!-- JS Implementing Plugins -->
 <script  src="/vendor/gmaps/gmaps.min.js"></script>
 
 <!-- JS Unify -->
 <script  src="/js/components/gmap/hs.map.js"></script>
+
+<!-- JS Implementing Plugins -->
+<script src="/vendor/chosen/chosen.jquery.js"></script>
+<script src="/vendor/jquery-ui/ui/widgets/datepicker.js"></script>
+
+
+
+
 
 <!-- JS Plugins Init. -->
 <script >
@@ -442,6 +446,36 @@
     // initialization of go to
     $.HSCore.components.HSGoTo.init('.js-go-to');
   });
+</script>
+
+<!-- JS Plugins Init. -->
+<script >
+  $(document).on('ready', function () {
+    // initialization of tabs
+    $.HSCore.components.HSTabs.init('[role="tablist"]');
+  });
+  
+  $(window).on('resize', function () {
+    setTimeout(function () {
+      $.HSCore.components.HSTabs.init('[role="tablist"]');
+    }, 200);
+  });
+</script>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+
+  var app2 = new Vue({
+    el: '#app-2',
+    data: {
+      message: 'You loaded this page on ' + new Date().toLocaleString()
+    }
+  })
 </script>
 
 
