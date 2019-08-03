@@ -38,6 +38,9 @@ $router->map('GET', '/events', 'App\Controllers\EventsController@show', 'events'
 // admin home
 $router->map('GET', '/admin', 'App\Controllers\Admin\AdminController@show', 'admin-home');
 
+// admin events
+$router->map('GET', '/admin/events', 'App\Controllers\Admin\AdminEventsController@show', 'admin-events');
+$router->map('POST', '/admin/events', 'App\Controllers\Admin\AdminEventsController@add', 'admin-event');
 
 
 require_once __DIR__ . '/auth.php';

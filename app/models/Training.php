@@ -12,7 +12,7 @@ class Training extends Model
   use SoftDeletes;
 
   public $timestamps = true;
-  protected $fillable = ['dates', 'start', 'end', 'event', 'event_type', 'description',
+  protected $fillable = ['location','dates', 'start', 'end', 'event', 'event_type', 'description',
     'other_info', 'contact', 'contact_email', 'link', 'contact_phone', 'updated_by', 'updated_at', 'created_at'];
   protected $dates = ['deleted_at'];
 

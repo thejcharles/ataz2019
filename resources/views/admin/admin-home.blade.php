@@ -3,5 +3,5 @@
 
 @section('content')
 
-<h1>I AM THE CONTENT</h1>
+<h1>This will be the profile content</h1>
 @endsection
