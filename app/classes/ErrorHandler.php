@@ -10,7 +10,7 @@ class ErrorHandler
         $error = "[{$error_number}] An Error occurred in file {$error_file}, on line $error_line: $error_message}";
         $environment = getenv('APP_ENV');
 
-        if($environment === 'production' )
+        if($environment === 'development' )
         {
             $whoops = new \Whoops\Run;
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);

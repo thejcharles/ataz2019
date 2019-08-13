@@ -75,7 +75,7 @@
               <span class="d-flex align-self-center g-pos-rel g-font-size-18 g-mr-18">
       <i class="hs-admin-settings"></i>
     </span>
-        <span class="media-body align-self-center">Layouts Settings</span>
+        <span class="media-body align-self-center">ATAZ Administration</span>
         <span class="d-flex align-self-center u-side-nav--control-icon">
       <i class="hs-admin-angle-right"></i>
     </span>
@@ -99,11 +99,11 @@
         <!-- Fixed Header & Static Sidebar -->
         <li class="u-sidebar-navigation-v1-menu-item u-side-nav--second-level-menu-item">
           <a class="media u-side-nav--second-level-menu-link g-px-15 g-py-12"
-             href="layout-settings/fixed-header-static-sidebar.html">
+             href="/admin/events">
                   <span class="d-flex align-self-center g-mr-15 g-mt-minus-1">
           <i class="hs-admin-layout-media-center-alt"></i>
         </span>
-            <span class="media-body align-self-center">Fixed Header & Static Sidebar</span>
+            <span class="media-body align-self-center">Add New Event</span>
           </a>
         </li>
         <!-- End Fixed Header & Static Sidebar -->
