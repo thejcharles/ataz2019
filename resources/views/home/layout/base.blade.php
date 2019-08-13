@@ -327,7 +327,7 @@
         <!-- End Footer -->
 
         <!-- Copyright Footer -->
-        <footer class="g-bg-black g-color-white-opacity-0_8 g-py-20 ">
+        <footer class="g-bg-black g-color-white-opacity-0_8 g-py-20 u-header--sticky-bottom"  style="position: absolute;bottom: 0; width: 100%;">
             <div class="container ">
                 <div class="row ">
                     <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md ">
