@@ -2,4 +2,4 @@
 echo "Errors: {$data}";
 ?>
 
- <div>Hello </div>
+<div>Hello</div>

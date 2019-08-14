@@ -13,6 +13,10 @@ $router->map('GET', '/products', 'App\Controllers\ProductsController@show', 'pro
 
 // contact page
 $router->map('GET', '/contact', 'App\Controllers\ContactController@show', 'contact');
+$router->map('POST', '/contact', 'App\Controllers\ContactController@email', 'contact-email');
+// contact thanks page
+$router->map('GET', '/contact-thanks', 'App\Controllers\ContactController@thanks', 'thanks');
+
 // contact page
 // $router->map('GET', '/staff', 'App\Controllers\StaffController@show', 'staff');
 // $router->map('GET', '/staff-profile/[i:id]', 'App\Controllers\StaffController@profile', 'staff_profile');
@@ -30,8 +34,9 @@ $router->map('GET', '/services', 'App\Controllers\ServicesController@show', 'ser
 // resources
 $router->map('GET', '/resources', 'App\Controllers\ResourcesController@show', 'resources');
 
-// resources
-$router->map('GET', '/events', 'App\Controllers\EventsController@show', 'events');
+// trainings
+$router->map('GET', '/trainings', 'App\Controllers\EventsController@show', 'trainings');
+
 
 // admin routes
 
@@ -41,6 +46,7 @@ $router->map('GET', '/admin', 'App\Controllers\Admin\AdminController@show', 'adm
 // admin events
 $router->map('GET', '/admin/events', 'App\Controllers\Admin\AdminEventsController@show', 'admin-events');
 $router->map('POST', '/admin/events', 'App\Controllers\Admin\AdminEventsController@add', 'admin-event');
+$router->map('POST', '/admin/events[i:id]/edit', 'App\Controllers\Admin\AdminEventsController@edit', 'admin-edit-event');
 
 
 require_once __DIR__ . '/auth.php';

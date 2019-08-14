@@ -19,7 +19,7 @@ class ErrorHandler
             $data = [
                 'to' => 'jasoncharlesrogers@gmail.com',
                 'subject' => 'System Error',
-                'view' => 'errors',
+                'view' => 'errors/generic',
                 'name' => 'admin',
                 'body' => $error
             ];
