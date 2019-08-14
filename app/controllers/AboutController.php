@@ -4,9 +4,10 @@
 namespace App\Controllers;
 
 
-class AboutController  extends BaseController
+class AboutController extends BaseController
 {
-    public function show(){
-        return view('home/about');
-    }
+  public function show()
+  {
+    return view('home/about');
+  }
 }

@@ -6,8 +6,9 @@ namespace App\Controllers;
 class ProductsController extends BaseController
 
 {
-    public function show(){
+  public function show()
+  {
 
-        return view('home/products');
-    }
+    return view('home/products');
+  }
 }
