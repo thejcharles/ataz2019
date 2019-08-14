@@ -60,7 +60,8 @@
                 </div>
                 <div class="col-4 align-self-center text-right">
                   <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-25"
-                  >Login</button>
+                  >Login
+                  </button>
                 </div>
               </div>
             </div>

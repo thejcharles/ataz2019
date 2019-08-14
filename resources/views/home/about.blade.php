@@ -2,6 +2,6 @@
 @section('title', 'About Us')
 
 @section('content')
-
-this is the about us section
+  
+  this is the about us section
 @endsection

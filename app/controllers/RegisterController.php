@@ -6,8 +6,9 @@ namespace App\Controllers;
 class RegisterController extends BaseController
 
 {
-    public function show(){
+  public function show()
+  {
 
-        return view('home/register');
-    }
+    return view('home/register');
+  }
 }

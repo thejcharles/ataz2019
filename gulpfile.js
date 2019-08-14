@@ -8,7 +8,7 @@ elixir.config.sourcemaps = false;
 autoprefixer = require("gulp-autoprefixer");
 concat = require("gulp-concat");
 
-gulp.task("sass", function() {
+gulp.task("sass", function () {
   return gulp
     .src("./resources/assets/include/**/*.scss")
     .pipe(sass().on("error", sass.logError))
@@ -16,11 +16,11 @@ gulp.task("sass", function() {
 });
 
 // define the default task and add the watch task to it
-gulp.task("default", function() {
+gulp.task("default", function () {
   gulp.watch("./resources/assets/include/**/*.scss", ["sass"]);
 });
 
-elixir(function(mix) {
+elixir(function (mix) {
   // compile sass to css
   //mix.sass(['resources/assets/include/scss/**/*.scss'], 'resources/assets/css');
   //combine css files
@@ -58,14 +58,14 @@ elixir(function(mix) {
       "/vendor/jquery-migrate/jquery-migrate.min.js",
       "/vendor/popper.js/popper.min.js",
       "/vendor/bootstrap/bootstrap.min.js",
-
+      
       "/vendor/hs-megamenu/src/hs.megamenu.js",
       "/vendor/dzsparallaxer/dzsparallaxer.js",
       "/vendor/dzsparallaxer/dzsscroller/scroller.js",
       "/vendor/dzsparallaxer/advancedscroller/plugin.js",
       "/vendor/fancybox/jquery.fancybox.min.js",
       "/vendor/slick-carousel/slick/slick.js",
-
+      
       "/js/hs.core.js",
       "/js/components/hs.header.js",
       "/js/helpers/hs.hamburgers.js",
@@ -75,21 +75,25 @@ elixir(function(mix) {
       "/js/components/hs.go-to.js",
       "js/custom.js",
       "resources/assets/js/**/*.js",
-      "resources/assets/vendor/**/*.js"
+      "resources/assets/vendor/**/*.js",
+      "js/ataz.js",
+      "js/admin/*.js",
+      "js/init.js"
     ],
     "public/js/shell.js", // output file
     "resources/assets"
   );
-
+  
   //configure the jshint task
-  gulp.task("jshint", function() {
+  gulp.task("jshint", function () {
     // return gulp.src("source/javascript/**/*.js");
     // .pipe(jshint())
     // .pipe(jshint.reporter('jshint-stylish'));
   });
-
+  
   // configure which files to watch and what tasks to use on file changes
-  gulp.task("watch", function() {});
+  gulp.task("watch", function () {
+  });
   gulp.watch("./resources/assets/include/**/*.scss", [
     "jshint",
     "default",

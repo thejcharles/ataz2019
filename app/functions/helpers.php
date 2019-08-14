@@ -21,7 +21,7 @@ function make($filename, $data)
     ob_start();
     echo __DIR__;
     //include template
-    //include('/../../resources/views/emails/' . $filename . '.php');
+    include('../resources/views/emails/' . $filename . '.php');
     //get content of the file
     $content = ob_get_contents();
 

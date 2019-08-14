@@ -48,7 +48,7 @@ class Mail
             // sender info
 
             $this->mail->From = getenv('ADMIN_EMAIL');
-            $this->mail->FromName = getenv('jason the man');
+            $this->mail->FromName = getenv('SITE_EMAIL');
 
 
         }
