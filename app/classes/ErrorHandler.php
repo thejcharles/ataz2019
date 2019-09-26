@@ -17,10 +17,10 @@ class ErrorHandler
             $whoops->register();
         }else{
             $data = [
-                'to' => 'jasoncharlesrogers@gmail.com',
+                'to' => getenv('ADMIN_EMAIL'),
                 'subject' => 'System Error',
-                'view' => 'errors/generic',
-                'name' => 'admin',
+                'view' => '/Errors',
+                'name' => 'Admin',
                 'body' => $error
             ];
             ErrorHandler::emailAdmin($data)->outputFriendlyError();
@@ -29,7 +29,7 @@ class ErrorHandler
     public function outputFriendlyError()
     {
         ob_end_clean();
-        view('errors/generic');
+        view('errors/Errors');
         exit;
     }
 

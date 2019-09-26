@@ -23,7 +23,7 @@ class ContactController extends BaseController
       $request = Request::get('post');
       if (CSRFToken::verifyCSRFToken($request->token)) {
         $rules = [
-          'name' => ['required' => true, 'maxLength' => 20, 'string' => true, 'unique' => 'users'],
+          'name' => ['required' => true, 'maxLength' => 20, 'string' => true],
           'email' => ['required' => true, 'email' => true],
           'message' => ['required' => true, 'minLength' => 4, 'maxLength' => 1500, 'mixed' => true]
         ];
@@ -41,8 +41,8 @@ class ContactController extends BaseController
         $data = [
           'to' => 'jasoncharlesrogers@gmail.com',
           'name' => $request->name,
-          'subject' => 'this is a contact message',
-          'body' => 'here is the body',
+          'subject' => 'Contact from ATAZ',
+          'body' => $request->message,
           'view' => 'welcome'
 
         ];

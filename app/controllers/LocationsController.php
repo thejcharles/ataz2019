@@ -10,7 +10,8 @@ class LocationsController extends BaseController
   public function show()
   {
     $locations = Capsule::table('onestops')->get();
-    return view('home/wioa-locations', ['locations' => $locations]);
+    $counties = Capsule::table('county')->get();
+    return view('home/wioa-locations', ['locations' => $locations, 'counties' =>$counties]);
   }
 
   public function location($id)
