@@ -19,7 +19,6 @@ function make($filename, $data)
     extract($data);
     //turn on output buffering
     ob_start();
-    echo __DIR__;
     //include template
     include('../resources/views/emails/' . $filename . '.php');
     //get content of the file

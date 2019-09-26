@@ -25,7 +25,7 @@ class Mail
 
         $environment = getenv('APP_ENV');
 
-        if($environment === 'local')
+        if($environment === 'development')
             { $this->mail->SMTPDebug = 2;
 
                  $this->mail->SMTPOptions = [

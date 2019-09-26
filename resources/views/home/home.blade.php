@@ -3,13 +3,7 @@
 
 @section('content')
   
-  <div id="app-2">
-    @{{message }}
-  </div>
-  
-  <?php $stuff = array('people', 'jason', 'stuff', 'this stuff'); ?>
-  
-  <?php echo $stuff[0];?>
+
   <!-- Promo Block -->
   <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall"
            data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
@@ -89,11 +83,7 @@
                 <div class="col-lg-6">
                     <div class="mb-5">
                         <h5>Gilbert Guadalupe RSA Office</h5>
-                        <p class="g-mb-30">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo
-                            consequat. </p>
+               
                         <div class="row">
                             <div class="col-sm-6">
                                 <ul class="list-unstyled g-font-size-13 mb-0">
