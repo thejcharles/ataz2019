@@ -4,15 +4,24 @@
 namespace App\Controllers\Admin;
 
 use App\Classes\CSRFToken;
+use App\Classes\Redirect;
 use App\Classes\Request;
 use App\Classes\ValidateRequest;
+use App\Controllers\AuthController;
 use App\Controllers\BaseController;
 use App\Models\Training;
 
-class AdminEventsController extends BaseController
+class AdminEventsController extends AdminController
 {
   public function show()
   {
+    $l = new AdminController();
+    var_dump($l->user);
+
+    $u= new AuthController();
+
+    var_dump($u->g);
+
 
     return view('admin/admin-events');
   }
@@ -57,6 +66,11 @@ class AdminEventsController extends BaseController
     return null;
   }
 
+  /**
+   * @param $id
+   * @return |null
+   * @throws \Exception
+   */
   public function edit($id)
   {
     if (Request::has('post')) {
@@ -92,7 +106,9 @@ class AdminEventsController extends BaseController
         echo json_encode(['success' => 'Record updated successfully']);
         exit;
       }
+      Redirect::to('/admin/admin-home');
       throw new \Exception('Token Mismatch');
+
     }
     return null;
   }
