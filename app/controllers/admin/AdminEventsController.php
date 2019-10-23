@@ -15,12 +15,12 @@ class AdminEventsController extends AdminController
 {
   public function show()
   {
-    $l = new AdminController();
-    var_dump($l->user);
-
-    $u= new AuthController();
-
-    var_dump($u->g);
+//    $l = new AdminController();
+//    var_dump($l->user);
+//
+//    $u = new AuthController();
+//
+//    //var_dump($u->u);
 
 
     return view('admin/admin-events');
@@ -35,7 +35,7 @@ class AdminEventsController extends AdminController
           'location' => ['required' => true],
           'event' => ['required' => true],
           'dates' => ['required' => true],
-          'start' => ['required' => true, 'minLength' => 6, 'maxLength' => 50],
+          'start' => ['required' => true],
           'end' => ['required' => true]
         ];
 
@@ -52,8 +52,10 @@ class AdminEventsController extends AdminController
           'location' => $request->location,
           'event' => $request->event,
           'dates' => $request->dates,
-          'start' => $request->startTime,
-          'end' => $request->endTime,
+          'start' => $request->start,
+          'end' => $request->end,
+          'contact' => $request->contact,
+          'contact_email' => $request->contact_email !== null ? $request->contact_email : getenv('CENTER_EMAIL'),
           //'photo' => $request->photo,
           'description' => $request->description
         ]);

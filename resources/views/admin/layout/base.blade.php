@@ -14,17 +14,17 @@
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
   
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   <link rel="stylesheet" href="/vendor/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="/vendor/jquery-ui/themes/base/jquery-ui.min.css">
   
   <!-- CSS Unify -->
   
-  <link rel="stylesheet" href="/css/scss/unify-components.css">
-  <link rel="stylesheet" href="/css/scss/unify.css">
-  <link rel="stylesheet" href="/css/scss/unify-core.css">
-  <link rel="stylesheet" href="/css/scss/unify-globals.css">
-  <link rel="stylesheet" href="/css/scss/custom.css">
-  <link rel="stylesheet" href="/css/shell.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  
   <link rel="stylesheet" href="/css/icon-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="/css/icon-line-pro/style.css">
   <!-- admin styles -->
@@ -56,6 +56,9 @@
   
   <!-- CSS Unify -->
   <link rel="stylesheet" href="/assets/css/unify-admin.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/styles.css">
   
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -915,7 +918,11 @@
     
     $(document).on('ready', function () {
         // initialization of forms
-        $.HSCore.components.HSDatepicker.init('#datepickerDefault, #datepickerInline, #datepickerInlineFrom, #datepickerFrom', {dateFormat: 'mm/dd/yy'});
+        $(document).ready(function(){
+            $('.timepicker').timepicker();
+            $('select').formSelect();
+            $('.datepicker').datepicker();
+        });
     });
     $(document).on('ready', function () {
         // initialization of custom select
@@ -988,5 +995,8 @@
         // initialization of forms
         $.HSCore.components.HSMaskedInput.init('[data-mask]');
     });
+
 </script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 

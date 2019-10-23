@@ -9,7 +9,7 @@
            data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
     <!-- Parallax Image -->
     <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-pos-center g-bg-black-opacity-0_5--after"
-         style="height: 140%; background-image: url(/img/ataz/ability360.jpg);"></div>
+         style="height: 140%; background-image: url(img/ataz/ability360.jpg)"></div>
     <!-- End Parallax Image -->
     
     <!-- Promo Block Content -->
@@ -37,7 +37,7 @@
         <p class="text-uppercase mb-5 g-color-white">State-Wide Events</p>
       </li>
       <li class="col" data-animation="fadeIn" data-animation-delay="700" data-animation-duration="900">
-        <img class="g-width-100 u-block-hover__main" src="/img/ataz/eye_calibration.jpg" alt="Image Description">
+        <img class="g-width-100 u-block-hover__main" src="img/ataz/eye_calibration.jpg" alt="Image Description">
         <p class="text-uppercase mb-5 g-color-white">A.T. Gallery</p>
       </li>
     </ul>
@@ -81,8 +81,8 @@
             <p class="g-color-gray-dark-v4">We strive to embrace and drive change in our industry which
               allows us to keep our clients relevant and ready
               to adapt.</p>
-            <a class="btn btn-xl u-btn-primary g-font-weight-600 g-font-size-default g-px-35 "
-               href="location-info.php">View Resources</a>
+            <a class="waves-effect waves-light btn"
+               href="/resources">View Resources</a>
           </div>
           <!-- End Icon Blocks -->
         </div>
@@ -97,8 +97,8 @@
             <p class="g-color-gray-dark-v4">We strive to embrace and drive change in our industry which
               allows us to keep our clients relevant and ready
               to adapt.</p>
-            <a class="btn btn-xl u-btn-primary g-font-weight-600 g-font-size-default g-px-35 "
-               href="hands-on-training.php">View schedule</a>
+            <a class="waves-effect waves-light btn"
+               href="/trainings">View schedule</a>
           </div>
           <!-- End Icon Blocks -->
         </div>
@@ -113,8 +113,8 @@
             <p class="g-color-gray-dark-v4">We strive to embrace and drive change in our industry which
               allows us to keep our clients relevant and ready
               to adapt.</p>
-            <a class="btn btn-xl u-btn-primary g-font-weight-600 g-font-size-default g-px-35 "
-               href="wioa-locations">Find a location</a>
+            <a class="waves-effect waves-light btn"
+               href="/wioa-locations">Find a location</a>
           </div>
           <!-- End Icon Blocks -->
         </div>
@@ -140,8 +140,8 @@
               <br> insight, and tips from Arizona's top A.T. trainers</h2>
             <p class="lead mb-5 ">Using Assistive Technology and Disability Awareness Training to
               overcome disability barriers.</p>
-            <a class="btn btn-xl u-btn-outline-black g-font-weight-600 g-font-size-default g-px-35 "
-               href="#! ">Sign Up!</a>
+            <a class="btn waves-effect waves-light"
+               href="/contact"><i class="material-icons right">send</i>Sign Up!</a>
             <!-- End Heading -->
           </div>
         </div>

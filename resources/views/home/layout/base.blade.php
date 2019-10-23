@@ -14,6 +14,8 @@
   <link rel="shortcut icon" href="/img/ataz/favicon.ico">
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   
   <link rel="stylesheet" href="/vendor/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="/vendor/jquery-ui/themes/base/jquery-ui.min.css">
@@ -24,21 +26,19 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!-- CSS Unify -->
   
-  <link rel="stylesheet" href="/css/scss/unify-components.css">
-  <link rel="stylesheet" href="/css/scss/unify.css">
-  <link rel="stylesheet" href="/css/scss/unify-core.css">
-  <link rel="stylesheet" href="/css/scss/unify-globals.css">
-  <link rel="stylesheet" href="/css/scss/custom.css">
-  <link rel="stylesheet" href="/css/shell.css">
+  {{--  <link rel="stylesheet" href="/css/scss/unify-components.css">--}}
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/icon-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="/css/icon-line-pro/style.css">
   
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  
-  
-  
-  <!-- production version, optimized for size and speed -->
+  {{--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">--}}
+
+
+
+<!-- production version, optimized for size and speed -->
   {{--  <script src="https://cdn.jsdelivr.net/npm/vue"></script>--}}
 </head>
 
@@ -51,18 +51,19 @@
     <div class="u-header__section u-header__section--dark g-bg-black g-transition-0_3 g-py-10"
          data-header-fix-moment-exclude="g-bg-black g-py-10"
          data-header-fix-moment-classes="g-bg-black-opacity-0_7 g-py-0">
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbars navbar-expand-lg">
         <div class="container">
           <!-- Responsive Toggle Button -->
           <button
             class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
             type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
             data-toggle="collapse" data-target="#navBar">
-                            <span class="hamburger hamburger--slider">
-                                <span class="hamburger-box">
-                                    <span class="hamburger-inner"></span>
-                                </span>
-                            </span>
+            <i class="large material-icons">menu</i>
+            {{--                            <span class="hamburger hamburger--slider">--}}
+            {{--                                <span class="hamburger-box">--}}
+            {{--                                    <span class="hamburger-inner"></span>--}}
+            {{--                                </span>--}}
+            {{--                            </span>--}}
           </button>
           <!-- End Responsive Toggle Button -->
           
@@ -104,42 +105,36 @@
                 
                 </a>
               </li>
+              <!-- Dropdown Trigger -->
               @if(isAuthenticated())
-                <li class="nav-item dropdown g-mx-20--lg">
-                  <a href="#!" class="nav-link dropdown-toggle g-px-0" data-toggle="dropdown"
-                     aria-haspopup="true" aria-expanded="false">Settings </a>
-                  <!-- Submenu (Bootstrap) -->
-                  <ul
-                    class="dropdown-menu rounded-0 g-text-transform-none g-brd-none g-brd-top g-brd-primary g-brd-top-2 g-mt-20 g-mt-10--lg--scrolling"
-                    style="background-color:#ff6600; color: rgba(33, 67, 89, 1)">
-                    <li class="dropdown-item active" style="color: rgb(33, 67, 89);">
+                <li>
+                  <a class="nav-item  dropdown-trigger" href="#!" data-target="dropdown1">Admin Options<i
+                      class="material-icons right">arrow_drop_down</i></a>
+                  <ul id="dropdown1" class="dropdown-content">
+                    <li class="dropdown-item">
                       <a class="nav-link g-px-0" href="#!">Profile</a>
                     </li>
                     <li class="dropdown-item">
                       <a class="nav-link g-px-0" href="/admin"
-                         style="color: rgb(33, 67, 89);">Administration</a>
+                      >Administration</a>
                     </li>
                     <li class="dropdown-item">
-                      <a class="nav-link g-px-0" href="#!" style="color: rgb(33, 67, 89);">
+                      <a class="nav-link g-px-0" href="#!">
                         Get Support</a>
                     </li>
                     <li class="dropdown-item">
-                      <a class="nav-link g-px-0" href="/logout" style="color: rgb(33, 67, 89);">
+                      <a class="nav-link g-px-0" href="/logout">
                         Log Out</a>
                     </li>
                   </ul>
-                  <!-- End Submenu (Bootstrap) -->
                 </li>
               @else
-                
                 <li class="nav-item g-mx-20--lg">
                   <a href="/login" class="nav-link px-0">
                     Login
                   </a>
                 </li>
               @endif
-            
-            
             </ul>
           </div>
           <!-- End Navigation -->
@@ -152,14 +147,11 @@
   <div id="app">
     @{{ message }}
   </div>
-  
   @yield('content')
 </main>
 
 <div class="shortcode-html">
   <!-- Footer -->
-  
-  
   <!-- Hero Info -->
   <section class="g-bg-cover g-bg-size-cover g-bg-black-opacity-0_8--after g-py-120 "
            style="background-image: url(/img/ataz/Casa_Grande_Florence_Blvd.jpg); ">
@@ -170,7 +162,7 @@
             <span class="g-color-primary g-font-weight-600 ">A.T. Arizona</span>.</h2>
           <p class="lead g-color-white-opacity-0_8 g-font-weight-400 g-mb-50 ">Resources | Hands-on
             training | A.T. experts</p>
-          <a class="btn btn-xl u-btn-primary g-font-weight-600 g-font-size-default g-px-35 "
+          <a class="waves-effect waves-light btn"
              href="#! ">Contact us!</a>
         </div>
       </div>
@@ -419,6 +411,7 @@
 <!-- JS Plugins Init. -->
 <script>
     M.AutoInit();
+    
     // initialization of google map
     function initMap() {
         $.HSCore.components.HSGMap.init('.js-g-map');
@@ -427,6 +420,8 @@
 
 <script>
     $(document).on('ready', function () {
+        //materialize dropdown
+        $(".dropdown-trigger").dropdown();
         // initialization of header
         $.HSCore.components.HSHeader.init($('#js-header'));
         $.HSCore.helpers.HSHamburgers.init('.hamburger');
@@ -474,7 +469,7 @@
     const app = new Vue({
         el: '#app',
         data: {
-            message: 'Hello Vue!'
+            // message: 'Hello Vue!'
         }
     })
     

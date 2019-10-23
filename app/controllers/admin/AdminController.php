@@ -19,6 +19,7 @@ function __construct()
   }
   if(isset($_SESSION['SESSION_USER_ID'])) {
     $this->user = Capsule::table('users')->where('id', $_SESSION['SESSION_USER_ID'])->first();
+
   }
   else {
     Redirect::to('/');
