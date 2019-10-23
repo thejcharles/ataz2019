@@ -14,17 +14,17 @@
   <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
   
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   <link rel="stylesheet" href="/vendor/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="/vendor/jquery-ui/themes/base/jquery-ui.min.css">
   
   <!-- CSS Unify -->
   
-  <link rel="stylesheet" href="/css/scss/unify-components.css">
-  <link rel="stylesheet" href="/css/scss/unify.css">
-  <link rel="stylesheet" href="/css/scss/unify-core.css">
-  <link rel="stylesheet" href="/css/scss/unify-globals.css">
-  <link rel="stylesheet" href="/css/scss/custom.css">
-  <link rel="stylesheet" href="/css/shell.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  
   <link rel="stylesheet" href="/css/icon-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="/css/icon-line-pro/style.css">
   <!-- admin styles -->
@@ -56,6 +56,9 @@
   
   <!-- CSS Unify -->
   <link rel="stylesheet" href="/assets/css/unify-admin.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/materialize.css">
+  <link rel="stylesheet" href="/css/styles.css">
   
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -422,7 +425,7 @@
                 </a>
               </li>
               <li class="mb-0">
-                <a class="media g-color-primary--hover g-py-5 g-px-20" href="#">
+                <a class="media g-color-primary--hover g-py-5 g-px-20" href="/logout">
                     <span class="d-flex align-self-center g-mr-12">
           <i class="hs-admin-shift-right"></i>
         </span>
@@ -912,70 +915,73 @@
 
 <!-- JS Plugins Init. -->
 <script>
-  
-  $(document).on('ready', function () {
-    // initialization of forms
-    $.HSCore.components.HSDatepicker.init('#datepickerDefault, #datepickerInline, #datepickerInlineFrom, #datepickerFrom', {dateFormat: 'mm/dd/yy'});
-  });
-  $(document).on('ready', function () {
-    // initialization of custom select
-    $('.js-select').selectpicker();
     
-    // initialization of hamburger
-    $.HSCore.helpers.HSHamburgers.init('.hamburger');
-    
-    // initialization of charts
-    $.HSCore.components.HSAreaChart.init('.js-area-chart');
-    $.HSCore.components.HSDonutChart.init('.js-donut-chart');
-    $.HSCore.components.HSBarChart.init('.js-bar-chart');
-    
-    // initialization of sidebar navigation component
-    $.HSCore.components.HSSideNav.init('.js-side-nav', {
-      afterOpen: function () {
-        setTimeout(function () {
-          $.HSCore.components.HSAreaChart.init('.js-area-chart');
-          $.HSCore.components.HSDonutChart.init('.js-donut-chart');
-          $.HSCore.components.HSBarChart.init('.js-bar-chart');
-        }, 400);
-      },
-      afterClose: function () {
-        setTimeout(function () {
-          $.HSCore.components.HSAreaChart.init('.js-area-chart');
-          $.HSCore.components.HSDonutChart.init('.js-donut-chart');
-          $.HSCore.components.HSBarChart.init('.js-bar-chart');
-        }, 400);
-      }
+    $(document).on('ready', function () {
+        // initialization of forms
+        $(document).ready(function(){
+            $('.timepicker').timepicker();
+            $('select').formSelect();
+            $('.datepicker').datepicker();
+        });
     });
-    
-    // initialization of range datepicker
-    $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
-    
-    // initialization of datepicker
-    $.HSCore.components.HSDatepicker.init('#datepicker', {
-      dayNamesMin: [
-        'SU',
-        'MO',
-        'TU',
-        'WE',
-        'TH',
-        'FR',
-        'SA'
-      ]
+    $(document).on('ready', function () {
+        // initialization of custom select
+        $('.js-select').selectpicker();
+        
+        // initialization of hamburger
+        $.HSCore.helpers.HSHamburgers.init('.hamburger');
+        
+        // initialization of charts
+        $.HSCore.components.HSAreaChart.init('.js-area-chart');
+        $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+        $.HSCore.components.HSBarChart.init('.js-bar-chart');
+        
+        // initialization of sidebar navigation component
+        $.HSCore.components.HSSideNav.init('.js-side-nav', {
+            afterOpen: function () {
+                setTimeout(function () {
+                    $.HSCore.components.HSAreaChart.init('.js-area-chart');
+                    $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+                    $.HSCore.components.HSBarChart.init('.js-bar-chart');
+                }, 400);
+            },
+            afterClose: function () {
+                setTimeout(function () {
+                    $.HSCore.components.HSAreaChart.init('.js-area-chart');
+                    $.HSCore.components.HSDonutChart.init('.js-donut-chart');
+                    $.HSCore.components.HSBarChart.init('.js-bar-chart');
+                }, 400);
+            }
+        });
+        
+        // initialization of range datepicker
+        $.HSCore.components.HSRangeDatepicker.init('#rangeDatepicker, #rangeDatepicker2, #rangeDatepicker3');
+        
+        // initialization of datepicker
+        $.HSCore.components.HSDatepicker.init('#datepicker', {
+            dayNamesMin: [
+                'MO',
+                'TU',
+                'WE',
+                'TH',
+                'FR',
+                'SA'
+            ]
+        });
+        
+        // initialization of HSDropdown component
+        $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
+        
+        // initialization of custom scrollbar
+        $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
+        
+        // initialization of popups
+        $.HSCore.components.HSPopup.init('.js-fancybox', {
+            btnTpl: {
+                smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v3 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
+            }
+        });
     });
-    
-    // initialization of HSDropdown component
-    $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {dropdownHideOnScroll: false});
-    
-    // initialization of custom scrollbar
-    $.HSCore.components.HSScrollBar.init($('.js-custom-scroll'));
-    
-    // initialization of popups
-    $.HSCore.components.HSPopup.init('.js-fancybox', {
-      btnTpl: {
-        smallBtn: '<button data-fancybox-close class="btn g-pos-abs g-top-25 g-right-30 g-line-height-1 g-bg-transparent g-font-size-16 g-color-gray-light-v3 g-brd-none p-0" title=""><i class="hs-admin-close"></i></button>'
-      }
-    });
-  });
 </script>
 <!-- JS Implementing Plugins -->
 <script src="/vendor/jquery.maskedinput/src/jquery.maskedinput.js"></script>
@@ -985,9 +991,12 @@
 
 <!-- JS Plugins Init. -->
 <script>
-  $(document).on('ready', function () {
-    // initialization of forms
-    $.HSCore.components.HSMaskedInput.init('[data-mask]');
-  });
+    $(document).on('ready', function () {
+        // initialization of forms
+        $.HSCore.components.HSMaskedInput.init('[data-mask]');
+    });
+
 </script>
- 
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
