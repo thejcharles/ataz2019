@@ -3,5 +3,6 @@
 
 @section('content')
   
-  <h1>This will be the profile content</h1>
+  <h1>Hello {{$user->username}}</h1>
+ 
 @endsection

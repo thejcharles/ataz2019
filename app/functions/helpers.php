@@ -62,3 +62,7 @@ function user()
     }
     return false;
 }
+
+function getSum($a, $b) {
+    return $a + $b;
+}

@@ -30,38 +30,29 @@
       @include('home.includes.message')
       <!-- Contact Form -->
         <form method="post" action="/contact">
-          <div class="g-mb-20">
-            <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Your name: <span
-                class="g-color-red">*</span>
-            </label>
+          <div class="input-field g-mb-20">
+            
             <input
+              id="name"
               name="name"
-              class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-primary--focus g-brd-gray-light-v4 rounded-3 g-py-13 g-px-15"
               type="text">
+            <label for="name">Your Name</label>
           </div>
           
-          <div class="g-mb-20">
-            <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Your email: <span
-                class="g-color-red">*</span>
-            </label>
-            <input
-              name="email"
-              class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-primary--focus g-brd-gray-light-v4 rounded-3 g-py-13 g-px-15"
-              type="email">
+          <div class="input-field mb-20">
+            <input id="email" name="email" type="email" class="validate" required>
+            <label for="email">Contact Email</label>
+            <span class="helper-text" data-error="Please enter a valid email"
+                  data-success="Thanks"></span>
           </div>
           
           <div class="g-mb-40">
-            <label class="g-color-gray-dark-v2 g-font-weight-600 g-font-size-13">Your message: <span
-                class="g-color-red">*</span>
-            </label>
-            <textarea
-              name="message"
-              class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-primary--focus g-brd-gray-light-v4 g-resize-none rounded-3 g-py-13 g-px-15"
-              rows="7"></textarea>
+            <textarea id="message" name="message" class="materialize-textarea" data-length="800" required></textarea>
+            <label for="message">Message</label>
           </div>
           <input type="hidden" name="token" value="{{ App\Classes\CSRFToken::_token() }}">
           <button
-            class="btn btn-lg u-btn-primary g-font-weight-600 g-font-size-default rounded-3 text-uppercase g-py-15 g-px-30"
+            class="teal base waves-effect waves-light btn g-color-white"
             type="submit" role="button">Contact Us!
           </button>
         </form>
@@ -104,12 +95,6 @@
         </div>
         <!-- End Contact Info -->
         <hr class="g-my-40">
-        <a class="g-color-main g-color-black--hover g-text-underline--none--hover" href="#">
-            <span class="align-middle u-icon-v2 u-icon-size--sm g-color-white g-bg-primary rounded-circle mr-3">
-                <i class="g-font-size-default icon-finance-206 u-line-icon-pro"></i>
-              </span>
-          <span class="g-font-weight-600 g-font-size-18">Live chat</span>
-        </a>
       </div>
     </div>
   </section>

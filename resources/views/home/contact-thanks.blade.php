@@ -39,7 +39,7 @@
       
       @include('home.includes.message')
       
-      <a class="btn u-btn-primary g-font-size-12 text-uppercase g-py-12 g-px-25" href="/">Go to home page</a>
+      <a class="teal base waves-effect waves-light btn g-color-white" href="/">Go to home page</a>
     </div>
   </div>
 

@@ -30,7 +30,7 @@ $g-xl: 1200px !default; // Extra large devices (large desktops, >=1200)
 
 // Main Colors
 $g-color-main: #555 !default;
-$g-bg-color-main: #fff !default;
+$g-bg-color-main: $g-bg-at-blue !default;
 
 // Primary Color
 $g-color-primary: #72c02c !default;

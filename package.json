@@ -1,16 +1,20 @@
 {
-  "name": "acbvi",
+  "name": "atarizona",
   "version": "1.0.0",
   "author": "Jason Rogers",
   "private": true,
   "dependencies": {
     "chart.js": "^2.7.1",
-    "laravel-elixir": "~5.0.0",
-    "node-sass": "^4.12.0"
+    "foundation-sites": "^6.5.3",
+    "laravel-elixir": "^6.0.0-18",
+    "materialize-sass": "^0.98.2",
+    "node-sass": "^4.12.0",
+    "zurb-foundation": "^4.2.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.2",
-    "gulp-util": "^3.0.8"
+    "gulp-util": "^3.0.8",
+    "laravel-mix": "^5.0.0"
   }
 }
