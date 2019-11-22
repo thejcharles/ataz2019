@@ -20,7 +20,8 @@ class IndexController extends BaseController
       $msg = 'Not defined';
     }
     $events = Capsule::table('trainings')->get();
-    return view('home/home', ['admin' => $msg, 'events' => $events]);
+    $staff = Capsule::table('staff')->where('active', '=', 1)->get();
+    return view('home/home', ['admin' => $msg, 'events' => $events, 'staff' => $staff]);
   }
 
   public function get()

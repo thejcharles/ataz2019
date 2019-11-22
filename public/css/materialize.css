@@ -5418,7 +5418,7 @@ button.btn-floating {
 
 .dropdown-content li > a, .dropdown-content li > span {
   font-size: 16px;
-  color: #1E88E5;
+  color: white;
   display: block;
   line-height: 22px;
   padding: 14px 16px;
@@ -6887,7 +6887,7 @@ select.browser-default {
 }
 
 select {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: white;
   width: 100%;
   padding: 5px;
   border: 1px solid #f2f2f2;
