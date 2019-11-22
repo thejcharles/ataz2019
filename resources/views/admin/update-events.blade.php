@@ -1,5 +1,6 @@
+<?php
 @extends('admin.layout.base')
-@section('title', 'Add and Event')
+@section('title', 'Update Event')
 @section('data-page-id', 'adminEvents')
 
 @section('content')
@@ -19,7 +20,7 @@
     <!-- Form -->
     <form class="card-body white darken-5" action="/admin/events" method="post">
       <div class="text-center mb-4 card-panel teal lighten-2">
-        <h2 class="h2 g-color-white g-font-weight-600">Create an Event</h2>
+        <h2 class="h2 g-color-white g-font-weight-600">Update Event</h2>
         @include('home.includes.message')
       </div>
       <div class="row">
@@ -34,9 +35,9 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <select id="event_type"  name="event_type" style="color:white;" required>
+          <select id="event_type" name="event_type" required>
             <option value="" disabled selected></option>
-            <option  value="rsa">RSA</option>
+            <option value="rsa">RSA</option>
             <option value="wioa">WIOA</option>
             <option value="public">PUBLIC</option>
           </select>

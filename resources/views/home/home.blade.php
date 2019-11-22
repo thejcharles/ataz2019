@@ -198,260 +198,75 @@
       <div class="col-lg-7">
         <!-- Heading -->
         <div class="text-center">
-          <h2 class="h3 g-color-black text-uppercase mb-2">Meet your A.T. Arizona Team</h2>
+          <h2 class="h3 g-color-black text-uppercase mb-2">Meet the A.T. Arizona Team</h2>
           <div class="d-inline-block g-width-35 g-height-2 g-bg-primary mb-2"></div>
-          <p class="mb-0">We are a creative studio focusing on culture, luxury, editorial &amp; art.
-            Somewhere between sophistication and
-            simplicity.
-          </p>
         </div>
         <!-- End Heading -->
       </div>
     </div>
     
     <div class="row">
+      @foreach( $staff as $s)
       <div class="col-lg-3 col-sm-6 g-mb-30">
         <div class="text-center u-block-hover">
           <!-- Figure -->
           <figure class="u-block-hover g-mb-25">
             <!-- Figure Image -->
-            <img class="w-100 staff-img img-fluid" src="/img/ataz/staff/Virginia_Thompson.jpg"
-                 alt="Image Description">
+            <img class="w-100 staff-img img-fluid" src="/img/ataz/staff/{{$s->photo}}"
+                 alt="Image of {{$s->first . '' . $s->last}} ">
             <!-- End Figure Image -->
             
             <!-- Figure Caption -->
-            <figcaption class="u-block-hover__additional--fade g-bg-primary-opacity-0_9 g-flex-middle g-px-10">
-              <q
-                class="u-quote-v1 g-flex-middle-item g-color-white g-font-weight-700 g-font-size-16 text-uppercase">changing
-                your mind and changing world</q>
-              
-              <!-- Figure Social Icons -->
-              <ul class="list-inline g-flex-middle-item--bottom g-mb-30 mt-0">
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-pinterest"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-              <!-- End Figure Social Icons -->
-            </figcaption>
+{{--            <figcaption class="u-block-hover__additional--fade g-bg-primary-opacity-0_9 g-flex-middle g-px-10">--}}
+{{--              <q--}}
+{{--                class="u-quote-v1 g-flex-middle-item g-color-white g-font-weight-700 g-font-size-16 text-uppercase">changing--}}
+{{--                your mind and changing world</q>--}}
+{{--              --}}
+{{--              <!-- Figure Social Icons -->--}}
+{{--              <ul class="list-inline g-flex-middle-item--bottom g-mb-30 mt-0">--}}
+{{--                <li class="list-inline-item g-mx-3">--}}
+{{--                  <a--}}
+{{--                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"--}}
+{{--                    href="#!">--}}
+{{--                    <i class="fa fa-twitter"></i>--}}
+{{--                  </a>--}}
+{{--                </li>--}}
+{{--                <li class="list-inline-item g-mx-3">--}}
+{{--                  <a--}}
+{{--                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"--}}
+{{--                    href="#!">--}}
+{{--                    <i class="fa fa-pinterest"></i>--}}
+{{--                  </a>--}}
+{{--                </li>--}}
+{{--                <li class="list-inline-item g-mx-3">--}}
+{{--                  <a--}}
+{{--                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"--}}
+{{--                    href="#!">--}}
+{{--                    <i class="fa fa-facebook"></i>--}}
+{{--                  </a>--}}
+{{--                </li>--}}
+{{--                <li class="list-inline-item g-mx-3">--}}
+{{--                  <a--}}
+{{--                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"--}}
+{{--                    href="#!">--}}
+{{--                    <i class="fa fa-linkedin"></i>--}}
+{{--                  </a>--}}
+{{--                </li>--}}
+{{--              </ul>--}}
+{{--              <!-- End Figure Social Icons -->--}}
+{{--            </figcaption>--}}
             <!-- End Figure Caption -->
           </figure>
           <!-- End Figure -->
           
           <!-- Figure Info -->
-          <em class="d-block g-font-style-normal g-font-size-16 text-uppercase g-color-primary g-mb-5">A.T./I.T.
-            Director</em>
-          <h4 class="h5 g-color-black g-mb-5">Virginia Thompson</h4>
-          <p class="g-font-size-15">M.A., C.R.C., C.V.E., L.A.C</p>
+          <em class="d-block g-font-style-normal g-font-size-16 text-uppercase g-color-primary g-mb-5">{{$s->title}}</em>
+          <h4 class="h5 g-color-black g-mb-5">{{$s->first . '' . $s->last}}</h4>
+          <p class="g-font-size-15">{{$s->credentials}}</p>
           <!-- End Figure Info-->
         </div>
       </div>
-      
-      <div class="col-lg-3 col-sm-6 g-mb-30">
-        <div class="text-center u-block-hover">
-          <!-- Figure -->
-          <figure class="u-block-hover g-mb-25">
-            <!-- Figure Image -->
-            <img class="w-100 staff-img img-fluid" src="/img/ataz/staff/Angela_Goldenberg.jpg"
-                 alt="Image Description">
-            <!-- End Figure Image -->
-            
-            <!-- Figure Caption -->
-            <figcaption class="u-block-hover__additional--fade g-bg-primary-opacity-0_9 g-flex-middle g-px-10">
-              <q
-                class="u-quote-v1 g-flex-middle-item g-color-white g-font-weight-700 g-font-size-16 text-uppercase">changing
-                your mind and changing world</q>
-              
-              <!-- Figure Social Icons -->
-              <ul class="list-inline g-flex-middle-item--bottom g-mb-30 mt-0">
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-pinterest"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-              <!-- End Figure Social Icons -->
-            </figcaption>
-            <!-- End Figure Caption -->
-          </figure>
-          <!-- End Figure -->
-          
-          <!-- Figure Info -->
-          <em
-            class="d-block g-font-style-normal g-font-size-16 text-uppercase g-color-primary g-mb-5">Trainer</em>
-          <h4 class="h5 g-color-black g-mb-5">Angela Goldenberg</h4>
-          <p class="g-font-size-15">Program Support Specialist</p>
-          <!-- End Figure Info-->
-        </div>
-      </div>
-      
-      <div class="col-lg-3 col-sm-6 g-mb-30">
-        <div class="text-center u-block-hover">
-          <!-- Figure -->
-          <figure class="u-block-hover g-mb-25">
-            <!-- Figure Image -->
-            <img class="w-100 staff-img img-fluid" src="/img/ataz/staff/Kristina_Le.jpg"
-                 alt="Image Description">
-            <!-- End Figure Image -->
-            
-            <!-- Figure Caption -->
-            <figcaption class="u-block-hover__additional--fade g-bg-primary-opacity-0_9 g-flex-middle g-px-10">
-              <q
-                class="u-quote-v1 g-flex-middle-item g-color-white g-font-weight-700 g-font-size-16 text-uppercase">changing
-                your mind and changing world</q>
-              
-              <!-- Figure Social Icons -->
-              <ul class="list-inline g-flex-middle-item--bottom g-mb-30 mt-0">
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-pinterest"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-              <!-- End Figure Social Icons -->
-            </figcaption>
-            <!-- End Figure Caption -->
-          </figure>
-          <!-- End Figure -->
-          
-          <!-- Figure Info -->
-          <em class="d-block g-font-style-normal g-font-size-16 text-uppercase g-color-primary g-mb-5">Training
-            Coordinator</em>
-          <h4 class="h5 g-color-black g-mb-5">Kristina Le</h4>
-          <p class="g-font-size-15">Trainer</p>
-          <!-- End Figure Info-->
-        </div>
-      </div>
-      
-      <div class="col-lg-3 col-sm-6 g-mb-30">
-        <div class="text-center u-block-hover">
-          <!-- Figure -->
-          <figure class="u-block-hover g-mb-25">
-            <!-- Figure Image -->
-            <img class="w-100 staff-img img-fluid" src="/img/ataz/staff/Jason_R.jpg" alt="Image Description">
-            <!-- End Figure Image -->
-            
-            <!-- Figure Caption -->
-            <figcaption class="u-block-hover__additional--fade g-bg-primary-opacity-0_9 g-flex-middle g-px-10">
-              <q
-                class="u-quote-v1 g-flex-middle-item g-color-white g-font-weight-700 g-font-size-16 text-uppercase">changing
-                your mind and changing world</q>
-              
-              <!-- Figure Social Icons -->
-              <ul class="list-inline g-flex-middle-item--bottom g-mb-30 mt-0">
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-pinterest"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item g-mx-3">
-                  <a
-                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"
-                    href="#!">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                </li>
-              </ul>
-              <!-- End Figure Social Icons -->
-            </figcaption>
-            <!-- End Figure Caption -->
-          </figure>
-          <!-- End Figure -->
-          
-          <!-- Figure Info -->
-          <em class="d-block g-font-style-normal g-font-size-16 text-uppercase g-color-primary g-mb-5">Web
-            Master</em>
-          <h4 class="h5 g-color-black g-mb-5">Jason Rogers</h4>
-          <p class="g-font-size-15">Software Engineer</p>
-          <!-- End Figure Info-->
-        </div>
-      </div>
+      @endforeach
     </div>
   </section>
   
