@@ -113,12 +113,13 @@
                 <li>
                   <article class="media g-mb-35">
                     <img class="d-flex g-width-40 g-height-40 rounded-circle mr-3"
-                         src="../../assets/img/ataz/lgshow.jpg" alt="Image Description">
+                         src="/img/ataz/lgshow.jpg" alt="Image of Distance learning photo">
                     <div class="media-body">
-                      <h4 class="h6 g-color-black g-font-weight-600">Vision</h4>
-                      <p class="g-color-gray-dark-v4">We will pu a brief description here.</p>
-                      <a class="teal base waves-effect waves-light btn g-color-white" href="/contact">Get
-                        started</a>
+                      <h4 class="h6 g-color-black g-font-weight-600">Earn Credits  online</h4>
+                      <p class="g-color-gray-dark-v4">
+                        Contact us to find out how to earn C.R.C. credits through our online program.
+                      </p>
+                      <a class="teal base waves-effect waves-light btn g-color-white" href="/contact">contact us</a>
                     </div>
                   </article>
                 </li>
