@@ -8,6 +8,7 @@
   <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall"
            data-options='{direction: "fromtop", animation_duration: 25, direction: "reverse"}'>
     <!-- Parallax Image -->
+    
     <div class="divimage dzsparallaxer--target w-100 g-bg-cover g-bg-pos-center g-bg-black-opacity-0_5--after"
          style="height: 140%; background-image: url(img/ataz/ability360.jpg)"></div>
     <!-- End Parallax Image -->
@@ -207,65 +208,25 @@
     
     <div class="row">
       @foreach( $staff as $s)
-      <div class="col-lg-3 col-sm-6 g-mb-30">
-        <div class="text-center u-block-hover">
-          <!-- Figure -->
-          <figure class="u-block-hover g-mb-25">
-            <!-- Figure Image -->
-            <img class="w-100 staff-img img-fluid" src="/img/ataz/staff/{{$s->photo}}"
-                 alt="Image of {{$s->first . '' . $s->last}} ">
-            <!-- End Figure Image -->
+        <div class="col-lg-3 col-sm-6 g-mb-30">
+          <div class="text-center u-block-hover">
+            <!-- Figure -->
+            <figure class="u-block-hover g-mb-25">
+              <!-- Figure Image -->
+              <img class="w-100 staff-img img-fluid" src="/img/ataz/staff/{{$s->photo}}"
+                   alt="Image of {{$s->first . ' ' . $s->last}} ">
+              <!-- End Figure Image -->
+            </figure>
+            <!-- End Figure -->
             
-            <!-- Figure Caption -->
-{{--            <figcaption class="u-block-hover__additional--fade g-bg-primary-opacity-0_9 g-flex-middle g-px-10">--}}
-{{--              <q--}}
-{{--                class="u-quote-v1 g-flex-middle-item g-color-white g-font-weight-700 g-font-size-16 text-uppercase">changing--}}
-{{--                your mind and changing world</q>--}}
-{{--              --}}
-{{--              <!-- Figure Social Icons -->--}}
-{{--              <ul class="list-inline g-flex-middle-item--bottom g-mb-30 mt-0">--}}
-{{--                <li class="list-inline-item g-mx-3">--}}
-{{--                  <a--}}
-{{--                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"--}}
-{{--                    href="#!">--}}
-{{--                    <i class="fa fa-twitter"></i>--}}
-{{--                  </a>--}}
-{{--                </li>--}}
-{{--                <li class="list-inline-item g-mx-3">--}}
-{{--                  <a--}}
-{{--                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"--}}
-{{--                    href="#!">--}}
-{{--                    <i class="fa fa-pinterest"></i>--}}
-{{--                  </a>--}}
-{{--                </li>--}}
-{{--                <li class="list-inline-item g-mx-3">--}}
-{{--                  <a--}}
-{{--                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"--}}
-{{--                    href="#!">--}}
-{{--                    <i class="fa fa-facebook"></i>--}}
-{{--                  </a>--}}
-{{--                </li>--}}
-{{--                <li class="list-inline-item g-mx-3">--}}
-{{--                  <a--}}
-{{--                    class="u-icon-v3 u-icon-size--xs g-bg-white g-color-primary g-color-primary--hover g-bg-black--hover"--}}
-{{--                    href="#!">--}}
-{{--                    <i class="fa fa-linkedin"></i>--}}
-{{--                  </a>--}}
-{{--                </li>--}}
-{{--              </ul>--}}
-{{--              <!-- End Figure Social Icons -->--}}
-{{--            </figcaption>--}}
-            <!-- End Figure Caption -->
-          </figure>
-          <!-- End Figure -->
-          
-          <!-- Figure Info -->
-          <em class="d-block g-font-style-normal g-font-size-16 text-uppercase g-color-primary g-mb-5">{{$s->title}}</em>
-          <h4 class="h5 g-color-black g-mb-5">{{$s->first . '' . $s->last}}</h4>
-          <p class="g-font-size-15">{{$s->credentials}}</p>
-          <!-- End Figure Info-->
+            <!-- Figure Info -->
+            <em
+              class="d-block g-font-style-normal g-font-size-16 text-uppercase g-color-primary g-mb-5">{{$s->title}}</em>
+            <h4 class="h5 g-color-black g-mb-5">{{$s->first . '' . $s->last}}</h4>
+            <p class="g-font-size-15">{{$s->credentials}}</p>
+            <!-- End Figure Info-->
+          </div>
         </div>
-      </div>
       @endforeach
     </div>
   </section>
